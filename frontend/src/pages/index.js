@@ -1,0 +1,12 @@
+export { default as Home } from "./Home";
+export { default as CadastroUser } from "./CadastroUser";
+export { default as CadastroEmpresa } from "./CadastroEmpresa";
+export { default as Login } from "./Login";
+export { default as CandidatoProfile } from "./CandidatoProfile";
+export { default as Vagas } from "./Vagas";
+export { default as PasswordResetRequest } from "./PasswordReset/PasswordResetRequest";
+export { default as PasswordResetSent } from "./PasswordReset/PasswordResetSent";
+export { default as PasswordResetComplete } from "./PasswordReset/PasswordResetComplete";
+export { default as VerifyEmail } from "./EmailVerification/VerifyEmail";
+export { default as VerificationRequest } from "./EmailVerification/VerificationRequest";
+export { default as CandidatoDetalhes } from "./Candidato/CandidatoDetalhes";

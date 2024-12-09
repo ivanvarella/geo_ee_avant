@@ -1,0 +1,21 @@
+.
+├── README.md
+├── documentation
+└── src
+    ├── components
+    │   ├── Button
+    │   ├── Footer
+    │   ├── Forms
+    │   ├── Header
+    │   ├── ProtectedRoute
+    │   ├── Telefone
+    │   └── UploadCurriculo
+    ├── layouts
+    ├── pages
+    │   ├── Candidato
+    │   ├── EmailVerification
+    │   ├── PasswordReset
+    │   └── temp
+    └── services
+
+17 directories, 1 file

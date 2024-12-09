@@ -1,0 +1,85 @@
+.
+├── README.md
+├── candidatos
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── test_views.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── composites
+│   ├── candidato_detalhes
+│   │   ├── admin.py
+│   │   ├── permissions.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   └── urls.py
+├── core
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── documentation
+│   ├── GEO-EE.postman_collection.json
+│   └── models.py
+├── empresas
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── media
+│   ├── curriculos
+│   ├── empresas_banners
+│   └── empresas_logos
+├── requirements.txt
+├── shareds
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── users
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── vagas
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+└── verification_recovery
+    ├── admin.py
+    ├── apps.py
+    ├── permissions.py
+    ├── serializers.py
+    ├── tests.py
+    ├── urls.py
+    └── views.py
+
+14 directories, 68 files

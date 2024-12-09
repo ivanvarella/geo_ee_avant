@@ -1,0 +1,19 @@
+.
+├── README.md
+├── candidatos
+├── composites
+│   └── candidato_detalhes
+├── core
+├── documentation
+├── empresas
+├── media
+│   ├── curriculos
+│   ├── empresas_banners
+│   └── empresas_logos
+├── requirements.txt
+├── shareds
+├── users
+├── vagas
+└── verification_recovery
+
+14 directories, 2 files

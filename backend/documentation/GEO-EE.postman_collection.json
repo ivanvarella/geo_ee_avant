@@ -1,0 +1,3383 @@
+{
+	"info": {
+		"_postman_id": "f7bd771b-c632-4c8c-aaf8-f32a214ca7e8",
+		"name": "GEO-EE",
+		"description": "Este projeto implementa um Sistema de Gerenciamento de Oportunidades de Estágios e Bolsas para Engenharia (GEO-Eng) foi concebido para centralizar, divulgar e gerenciar oportunidades de estágios e bolsas para alunos dos cursos de Engenharia da UFRN. Ele servirá como um ponto de conexão entre empresas, universidade e alunos, permitindo a busca eficiente de vagas e facilitando a comunicação entre as partes interessadas.EndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38074810",
+		"_collection_link": "https://fap-geo-ee.postman.co/workspace/FAP---GEO-EE-Workspace~c5965bf1-9632-45c6-8dbc-901cbc498f89/collection/38074810-f7bd771b-c632-4c8c-aaf8-f32a214ca7e8?action=share&source=collection_link&creator=38074810"
+	},
+	"item": [
+		{
+			"name": "JWT",
+			"item": [
+				{
+					"name": "Tokens",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"bob@django.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMDk5NDc2NCwiaWF0IjoxNzMwNTYyNzY0LCJqdGkiOiIyYWViMzFmNjg5ZTg0MTVmOTM3NTllMzgzNmQ5MDA2NCIsInVzZXJfaWQiOjF9.iAa_luRx2N31xPPyrQuiV72WwMqicHOJ1qhA10C249g\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Backlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMDk5NDc2NCwiaWF0IjoxNzMwNTYyNzY0LCJqdGkiOiIyYWViMzFmNjg5ZTg0MTVmOTM3NTllMzgzNmQ5MDA2NCIsInVzZXJfaWQiOjF9.iAa_luRx2N31xPPyrQuiV72WwMqicHOJ1qhA10C249g\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/token/blacklist/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"token",
+								"blacklist",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "verification_recovery",
+			"item": [
+				{
+					"name": "Email Verification",
+					"item": [
+						{
+							"name": "1 - Request Verification",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"ivanvarella@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/verificar-email/enviar-token/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"verificar-email",
+										"enviar-token",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2 - Validate Token",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ivanvarella@gmail.com\",\r\n    \"token\": \"cgqn3e-9e807ea518fe752365ac333sd72bca92f\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/verificar-email/validar-token/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"verificar-email",
+										"validar-token",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Password Recovery",
+					"item": [
+						{
+							"name": "1 - Request_Recovery",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"ivanvarella@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/resetar-senha/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"resetar-senha",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2 - Password_recovery",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ivanvarella@gmail.com\",\r\n    \"token\": \"cgqifl-4f09882c076448c13c888ec61fc38e16\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/resetar-senha/completo/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"resetar-senha",
+										"completo",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "VIACEP",
+			"item": [
+				{
+					"name": "VIACEP - Request",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://viacep.com.br/ws/01001000/json/",
+							"protocol": "https",
+							"host": [
+								"viacep",
+								"com",
+								"br"
+							],
+							"path": [
+								"ws",
+								"01001000",
+								"json",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "candidato",
+					"item": [
+						{
+							"name": "candidatos",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTk1MDI4LCJpYXQiOjE3MzE1MzUwMjgsImp0aSI6IjBlNDQxNjY1NzQxNzQxN2JiNTk4ZmQxYjc3OTdiOGIxIiwidXNlcl9pZCI6Mn0.xkiEy57hE33u6KApLUaa0XGKy51ufAIbldUWPiNjJzE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RQL with username",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMjM2NjkwLCJpYXQiOjE3MzAyMDA2OTAsImp0aSI6IjAyYTZiOGNlNDMzNzQzN2Y5MWYxZjU5MTMwNGM2NzI4IiwidXNlcl9pZCI6MX0.5zS3lF5yNHEIUJCo81thhPDOpPap6Fqxt5749bk9WCU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato/?eq(user,bob@hotmail.com)",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato",
+										""
+									],
+									"query": [
+										{
+											"key": "eq(user,bob@hotmail.com)",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Access deny - not working",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMTU0MzIzLCJpYXQiOjE3MzAxMTgzMjMsImp0aSI6Ijk3ZTM0ZDhlYzJmMTRiZTJiNTE2MTIyNWI5YzcyMWFjIiwidXNlcl9pZCI6Mn0.IbtCdZkM34d8DP-cwjIKJGpPR80GiPPwIGx1k4fwp94",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato/?eq(user,bond@yahoo.com)",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato",
+										""
+									],
+									"query": [
+										{
+											"key": "eq(user,bond@yahoo.com)",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Teste4\",\r\n    \"last_name\": \"da Silvasauro4\",\r\n    \"email\": \"ivanvarella@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"cpf\": \"13131331313\",\r\n    \"data_nascimento\": \"2024-10-16\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMjM2NjkwLCJpYXQiOjE3MzAyMDA2OTAsImp0aSI6IjAyYTZiOGNlNDMzNzQzN2Y5MWYxZjU5MTMwNGM2NzI4IiwidXNlcl9pZCI6MX0.5zS3lF5yNHEIUJCo81thhPDOpPap6Fqxt5749bk9WCU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/admin/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "shareds",
+			"item": [
+				{
+					"name": "Endereco",
+					"item": [
+						{
+							"name": "shareds/enderecos/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MTc0LCJpYXQiOjE3MzA3MjAxNzQsImp0aSI6ImNjZmJlNjY2NzRmNjQzM2M4Y2ZlYzkyNjQ5NDliN2U2IiwidXNlcl9pZCI6Mn0.e8WvhyShWDBoOsuT9q4irs8n1olo9ZX972JXtGrIxZ4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/enderecos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"enderecos",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Telefone",
+					"item": [
+						{
+							"name": "shareds/telefones/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MTc0LCJpYXQiOjE3MzA3MjAxNzQsImp0aSI6ImNjZmJlNjY2NzRmNjQzM2M4Y2ZlYzkyNjQ5NDliN2U2IiwidXNlcl9pZCI6Mn0.e8WvhyShWDBoOsuT9q4irs8n1olo9ZX972JXtGrIxZ4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/telefones/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"telefones",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Via Cep",
+					"item": [
+						{
+							"name": "via-cep",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MTg5LCJpYXQiOjE3MzA3MjAxODksImp0aSI6ImQyOWJiYmNjM2JjMDQ3YzlhYmJjNmUyOTQyMzM0OTAxIiwidXNlcl9pZCI6MX0.IuRuqPkos6nhm0RrwwFWeSCAJSCL5iO67_4HIlCJ9wQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/via-cep/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"via-cep",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "empresas",
+			"item": [
+				{
+					"name": "empresas",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/empresas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"empresas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTI4NzYxLCJpYXQiOjE3MzA4OTI3NjEsImp0aSI6IjMwODEwNTIxODAxYTQ0YmE5YWUwZTE2YjhmNzczMzU5IiwidXNlcl9pZCI6M30.0Q09mXMoy0Hs5NJVDkDjJOWzKpvpPrnpUNxZ9t8ozys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome_empresa",
+									"value": "Empresa teste 1",
+									"type": "text"
+								},
+								{
+									"key": "email_corporativo",
+									"value": "email@django.com",
+									"type": "text"
+								},
+								{
+									"key": "site_empresa",
+									"value": "http://www.bondempresalala.org",
+									"type": "text"
+								},
+								{
+									"key": "linkedin_empresa",
+									"value": "http://www.bondempresalala.org",
+									"type": "text"
+								},
+								{
+									"key": "instagram_empresa",
+									"value": "http://www.bondempresalala.org",
+									"type": "text"
+								},
+								{
+									"key": "numero_funcionarios",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "segmento_empresa",
+									"value": "Segmento teste 1",
+									"type": "text"
+								},
+								{
+									"key": "cnpj",
+									"value": "65425874025941",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/ivanv/Desktop/Logo/Logo1.jpg"
+								},
+								{
+									"key": "banner",
+									"type": "file",
+									"src": "/C:/Users/ivanv/Desktop/Banner/banner1.jpeg"
+								},
+								{
+									"key": "informacoes_empresa",
+									"value": "Informations!!!!",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/empresas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"empresas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTI4NzYxLCJpYXQiOjE3MzA4OTI3NjEsImp0aSI6IjMwODEwNTIxODAxYTQ0YmE5YWUwZTE2YjhmNzczMzU5IiwidXNlcl9pZCI6M30.0Q09mXMoy0Hs5NJVDkDjJOWzKpvpPrnpUNxZ9t8ozys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/empresas/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"empresas",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Form",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTI4NzYxLCJpYXQiOjE3MzA4OTI3NjEsImp0aSI6IjMwODEwNTIxODAxYTQ0YmE5YWUwZTE2YjhmNzczMzU5IiwidXNlcl9pZCI6M30.0Q09mXMoy0Hs5NJVDkDjJOWzKpvpPrnpUNxZ9t8ozys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome_empresa",
+									"value": "Empresa teste 2 - erro extensao",
+									"type": "text"
+								},
+								{
+									"key": "email_corporativo",
+									"value": "email@django.com",
+									"type": "text"
+								},
+								{
+									"key": "site_empresa",
+									"value": "http://www.bondempresalala.org",
+									"type": "text"
+								},
+								{
+									"key": "linkedin_empresa",
+									"value": "http://www.bondempresalala.org",
+									"type": "text"
+								},
+								{
+									"key": "instagram_empresa",
+									"value": "http://www.bondempresalala.org",
+									"type": "text"
+								},
+								{
+									"key": "numero_funcionarios",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "segmento_empresa",
+									"value": "Segmento teste 1",
+									"type": "text"
+								},
+								{
+									"key": "cnpj",
+									"value": "65425874025941",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/ivanv/Desktop/Logo/Logo3.png"
+								},
+								{
+									"key": "banner",
+									"type": "file",
+									"src": "/C:/Users/ivanv/Desktop/Banner/banner4.jpg"
+								},
+								{
+									"key": "informacoes_empresa",
+									"value": "Informations!!!!",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/empresas/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"empresas",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNDk4Nzk4LCJpYXQiOjE3MzA0NjI3OTgsImp0aSI6IjJlZGQwYTA4ZWY3OTQxNTJiZjEwYTJkMDg1MWJhZDZlIiwidXNlcl9pZCI6MTN9.GzBZyfG1hgZgOQUJn_9p5VBetRy_LpFoieYA1jg8o7Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_empresa\": \"Empresa Tesla - Space X\",\r\n    \"email_corporativo\": \"teslaempresa@bol.com\",\r\n    \"site_empresa\": \"http://www.empresa.net\",\r\n    \"linkedin_empresa\": \"http://www.linkedin.com.br/empresawow\",\r\n    \"instagram_empresa\": \"http://www.instagram.com.br/empresa\",\r\n    \"numero_funcionarios\": 397,\r\n    \"segmento_empresa\": \"Tecnologia - Foguetes\",\r\n    \"cnpj\": \"65498765432165\",\r\n    \"logo\": null,\r\n    \"banner\": null,\r\n    \"informacoes_empresa\": \"Foquetes ao infinito e além!!!!\",\r\n    \"responsavel\": 13,\r\n    \"endereco\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/empresas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"empresas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Form",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTI4NzYxLCJpYXQiOjE3MzA4OTI3NjEsImp0aSI6IjMwODEwNTIxODAxYTQ0YmE5YWUwZTE2YjhmNzczMzU5IiwidXNlcl9pZCI6M30.0Q09mXMoy0Hs5NJVDkDjJOWzKpvpPrnpUNxZ9t8ozys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "numero_funcionarios",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/ivanv/Desktop/Logo/Logo3.png"
+								},
+								{
+									"key": "banner",
+									"type": "file",
+									"src": "/C:/Users/ivanv/Desktop/Banner/banner2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/empresas/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"empresas",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNDk4Nzk4LCJpYXQiOjE3MzA0NjI3OTgsImp0aSI6IjJlZGQwYTA4ZWY3OTQxNTJiZjEwYTJkMDg1MWJhZDZlIiwidXNlcl9pZCI6MTN9.GzBZyfG1hgZgOQUJn_9p5VBetRy_LpFoieYA1jg8o7Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero_funcionarios\": 795,\r\n    \"segmento_empresa\": \"Tecnologia - Foguetes CIA\",\r\n    \"informacoes_empresa\": \"Foquetes ao infinito e além!!!!\",\r\n    \"responsavel\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/empresas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"empresas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vagas",
+			"item": [
+				{
+					"name": "vagas",
+					"item": [
+						{
+							"name": "vagas",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/vagas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"vagas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MjI4LCJpYXQiOjE3MzA3MjAyMjgsImp0aSI6IjgxYWY0NTYyODE5NzQxNWU4MzFjZjY5ODFlYmI1OTYwIiwidXNlcl9pZCI6MTB9.8vTW9sXHfwVf6bRexbkiE_LWcpbM8ZjygrzyKyUvQes",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Outra emprezsaas;lasd;klja\",\r\n    \"descricao\": \"Descrição:   Lalalalalalkasjdnflksajklfjd \",\r\n    \"responsabilidades_atribuicoes\": \"responsabilidades_atribuicoes: uiohaoidjfhlaksdjhflaksdj\",\r\n    \"requisitos_qualificacoes\": \"requisitos_asdfasdfqualificacoes: opiopopasdifapsdfalksdjfh\",\r\n    \"informacoes_adicionais\": \"informacoes_adicionais: owieuopqiweurlaksdjfblaksdjfhasd\",\r\n    \"sobre_empresa\": \"sobre_empresa: aoisduyfaosiduknelkabsdnf\",\r\n    \"data_publicacao\": \"2024-10-17T14:47:55-03:00\",\r\n    \"data_encerramento\": \"2024-10-30T14:49:13-03:00\",\r\n    \"status\": \"PUBLICADA\",\r\n    \"modalidade\": \"HIBRIDO\",\r\n    \"pcd\": \"NAO_PCD\",\r\n    \"remuneracao\": \"4999.00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/vagas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"vagas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNDk4Nzk4LCJpYXQiOjE3MzA0NjI3OTgsImp0aSI6IjJlZGQwYTA4ZWY3OTQxNTJiZjEwYTJkMDg1MWJhZDZlIiwidXNlcl9pZCI6MTN9.GzBZyfG1hgZgOQUJn_9p5VBetRy_LpFoieYA1jg8o7Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/vagas/3/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"vagas",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNDk4Nzk4LCJpYXQiOjE3MzA0NjI3OTgsImp0aSI6IjJlZGQwYTA4ZWY3OTQxNTJiZjEwYTJkMDg1MWJhZDZlIiwidXNlcl9pZCI6MTN9.GzBZyfG1hgZgOQUJn_9p5VBetRy_LpFoieYA1jg8o7Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Desenvolvedor Backend\",\r\n    \"descricao\": \"Vaga para desenvolvedor backend com experiência em Django.\",\r\n    \"responsabilidades_atribuicoes\": \"Desenvolver e manter aplicações backend.\",\r\n    \"requisitos_qualificacoes\": \"Experiência com Django e APIs REST.\",\r\n    \"informacoes_adicionais\": \"Trabalho remoto disponível.\",\r\n    \"sobre_empresa\": \"Empresa de tecnologia focada em soluções web.\",\r\n    \"data_publicacao\": \"2024-11-01T00:00:00Z\",\r\n    \"data_encerramento\": \"2024-12-01T00:00:00Z\",\r\n    \"status\": \"PUBLICADA\",\r\n    \"modalidade\": \"REMOTO\",\r\n    \"pcd\": \"QUALQUER\",\r\n    \"remuneracao\": 6000.00\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/vagas/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"vagas",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNDk4Nzk4LCJpYXQiOjE3MzA0NjI3OTgsImp0aSI6IjJlZGQwYTA4ZWY3OTQxNTJiZjEwYTJkMDg1MWJhZDZlIiwidXNlcl9pZCI6MTN9.GzBZyfG1hgZgOQUJn_9p5VBetRy_LpFoieYA1jg8o7Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Desenvolvedor Backend Topzeira\",\r\n    \"modalidade\": \"HIBRIDO\",\r\n    \"remuneracao\": 15000.00,\r\n    \"empresa\": 6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/vagas/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"vagas",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "candidaturas",
+					"item": [
+						{
+							"name": "candidaturas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MTU5LCJpYXQiOjE3MzA3MjAxNTksImp0aSI6ImM3NzFlNmU0ZDM2ODQ4MGE5MmY0YmM4MzE0MGExNmY1IiwidXNlcl9pZCI6MTF9.8U9eoxXwfMaj_NFi1h4So0C6z89EYrCHc1H6Ao6VVGA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidaturas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidaturas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MTc0LCJpYXQiOjE3MzA3MjAxNzQsImp0aSI6ImNjZmJlNjY2NzRmNjQzM2M4Y2ZlYzkyNjQ5NDliN2U2IiwidXNlcl9pZCI6Mn0.e8WvhyShWDBoOsuT9q4irs8n1olo9ZX972JXtGrIxZ4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vaga\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidaturas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidaturas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MTU5LCJpYXQiOjE3MzA3MjAxNTksImp0aSI6ImM3NzFlNmU0ZDM2ODQ4MGE5MmY0YmM4MzE0MGExNmY1IiwidXNlcl9pZCI6MTF9.8U9eoxXwfMaj_NFi1h4So0C6z89EYrCHc1H6Ao6VVGA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidaturas/6/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidaturas",
+										"6",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MjQzLCJpYXQiOjE3MzA3MjAyNDMsImp0aSI6IjllMzZkOTZmYjliZDQ2MDg4MDMwMWQyZjdhMDJmZGE0IiwidXNlcl9pZCI6MTN9.5q9rhvCIiggYr--B6xbv9IBUtYZo-Q61KIpcKMdnCDs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"REJEITADO\",\r\n    \"usuario\": 2,\r\n    \"vaga\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidaturas/9/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidaturas",
+										"9",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzU2MTc0LCJpYXQiOjE3MzA3MjAxNzQsImp0aSI6ImNjZmJlNjY2NzRmNjQzM2M4Y2ZlYzkyNjQ5NDliN2U2IiwidXNlcl9pZCI6Mn0.e8WvhyShWDBoOsuT9q4irs8n1olo9ZX972JXtGrIxZ4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"CANCELADO\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidaturas/9/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidaturas",
+										"9",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "candidatos",
+			"item": [
+				{
+					"name": "DadosCandidatos",
+					"item": [
+						{
+							"name": "dados_candidatos",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxOTkyNTQ1LCJpYXQiOjE3MzE5MzI1NDUsImp0aSI6IjA5ZDQ0ZDZmNDNhNDQwZTQ5NWZhZjE0MTU5YzE0YjMxIiwidXNlcl9pZCI6MzR9.tW7LFKO_uVKgh4ZHFzdrBkFgHGDe8ZsFZkg0WFkfJEg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/dados_candidatos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"dados_candidatos",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNjU0NDMxLCJpYXQiOjE3MzE1OTQ0MzEsImp0aSI6ImJkZDk1YmM4OGZjYzRiZWVhNzdiMzI2ZGQxYWUzM2E3IiwidXNlcl9pZCI6Mn0.foN2k48rgjVQJhLnpfw4_jpXNxFmcowTcQHB4P2QRRs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"genero\": \"masculino\",\r\n    \"deficiencia\": true,\r\n    \"tipo_deficiencia\": \"Cego\",\r\n    \"linkedin\": \"https://www.testelinkeding.com\",\r\n    \"github\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/dados_candidatos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"dados_candidatos",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/dados_candidatos/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"dados_candidatos",
+										"8",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"genero\": \"masculino\",\r\n    \"deficiencia\": false,\r\n    \"tipo_deficiencia\": \"cotoco\",\r\n    \"linkedin\": \"\",\r\n    \"github\": \"https://www.gigigigithuhuhuhb.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/dados_candidatos/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"dados_candidatos",
+										"8",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deficiencia\": true,\r\n    \"tipo_deficiencia\": \"Surdo\",\r\n    \"linkedin\": \"https://www.google.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/dados_candidatos/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"dados_candidatos",
+										"8",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Habilidades",
+					"item": [
+						{
+							"name": "habilidades",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNjU0NDMxLCJpYXQiOjE3MzE1OTQ0MzEsImp0aSI6ImJkZDk1YmM4OGZjYzRiZWVhNzdiMzI2ZGQxYWUzM2E3IiwidXNlcl9pZCI6Mn0.foN2k48rgjVQJhLnpfw4_jpXNxFmcowTcQHB4P2QRRs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/habilidades/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"habilidades",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Esquiar nas núvens sem capacete!\",\r\n    \"usuario\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/habilidades/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"habilidades",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/habilidades/7/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"habilidades",
+										"7",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Equilibrar vasourasssss\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/habilidades/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"habilidades",
+										"8",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Equilibrar baldes\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/habilidades/5/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"habilidades",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "XP_Academicas",
+					"item": [
+						{
+							"name": "experiencia_academicas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTYwOTc3LCJpYXQiOjE3MzE1MDA5NzcsImp0aSI6ImQwYWQyMDc5OTA0NTRjMmU5MjAxN2VjYTExNTRlZGM2IiwidXNlcl9pZCI6Mn0.mNzjhJzfMIjHyEhVpB-9m1tDVdXNzHBbLwlXz1yVzu8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_academicas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_academicas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"formacao\": \"Especialista em quebração de copos\",\r\n    \"curso\": \"quebra copos a doidado\",\r\n    \"status\": \"Interrompido\",\r\n    \"instituicao\": \"Centro de estudos quebristicos Brasileiro\",\r\n    \"inicio\": \"2023-07-03\",\r\n    \"fim\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_academicas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_academicas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_academicas/4/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_academicas",
+										"4",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"formacao\": \"Formação dos sonhos\",\r\n    \"curso\": \"Curso topzeira\",\r\n    \"status\": \"Interrompido\",\r\n    \"instituicao\": \"Centro de formação de formandos formados que formam formas formadas\",\r\n    \"inicio\": \"2023-07-03\",\r\n    \"fim\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_academicas/4/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_academicas",
+										"4",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"em_andamento\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_academicas/4/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_academicas",
+										"4",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "XP_Profissionais",
+					"item": [
+						{
+							"name": "experiencia_profissionals",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTYwOTc3LCJpYXQiOjE3MzE1MDA5NzcsImp0aSI6ImQwYWQyMDc5OTA0NTRjMmU5MjAxN2VjYTExNTRlZGM2IiwidXNlcl9pZCI6Mn0.mNzjhJzfMIjHyEhVpB-9m1tDVdXNzHBbLwlXz1yVzu8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_profissionals/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_profissionals",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"empresa\": \"Só Tijolos\",\r\n    \"cargo\": \"Tijoleiro mestre\",\r\n    \"atual\": true,\r\n    \"inicio\": \"2022-12-14\",\r\n    \"descricao_atividades\": \"Dava tijolada nos clientes\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_profissionals/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_profissionals",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_profissionals/4/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_profissionals",
+										"4",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"empresa\": \"Empreeeeeesssaaa!!!!\",\r\n    \"cargo\": \"Super Ajudante\",\r\n    \"atual\": true,\r\n    \"inicio\": \"2022-12-14\",\r\n    \"descricao_atividades\": \"Super ajudava supermente tudo!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_profissionals/3/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_profissionals",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cargo\": \"Super Ajudante\",\r\n    \"atual\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/experiencia_profissionals/3/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"experiencia_profissionals",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Idiomas",
+					"item": [
+						{
+							"name": "idiomas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTYwOTc3LCJpYXQiOjE3MzE1MDA5NzcsImp0aSI6ImQwYWQyMDc5OTA0NTRjMmU5MjAxN2VjYTExNTRlZGM2IiwidXNlcl9pZCI6Mn0.mNzjhJzfMIjHyEhVpB-9m1tDVdXNzHBbLwlXz1yVzu8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/idiomas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"idiomas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idioma\": \"Francês\",\r\n    \"nivel\": \"Básico\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/idiomas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"idiomas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/idiomas/7/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"idiomas",
+										"7",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idioma\": \"Russo\",\r\n    \"nivel\": \"avancado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/idiomas/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"idiomas",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nivel\": \"avancado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/idiomas/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"idiomas",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Conquistas",
+					"item": [
+						{
+							"name": "conquistas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTYwOTc3LCJpYXQiOjE3MzE1MDA5NzcsImp0aSI6ImQwYWQyMDc5OTA0NTRjMmU5MjAxN2VjYTExNTRlZGM2IiwidXNlcl9pZCI6Mn0.mNzjhJzfMIjHyEhVpB-9m1tDVdXNzHBbLwlXz1yVzu8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/conquistas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"conquistas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTIyLCJpYXQiOjE3MzA4MTU1MjIsImp0aSI6IjY4ODVkOTFiY2UyZTRmNGE5OTI4MzExMmJjYTI4MGUyIiwidXNlcl9pZCI6MTF9.4qeDXgySuxhYPftE3s8G0BGJmRy216Y261R9RoFMie0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"titulo\": \"Curso de astronauta traineer\",\r\n    \"descricao\": \"Curso para se tornar um astronauta e ir morar em Marte no final do ano!\",\r\n    \"usuario\": 45\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/conquistas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"conquistas",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/conquistas/3/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"conquistas",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"titulo\": \"Curso FAP - 2024\",\r\n    \"descricao\": \"Curso de Python com Django mega ultra top!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/conquistas/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"conquistas",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"descricao\": \"Curso de Python com Django mega ultra top!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/conquistas/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"conquistas",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Curriculos",
+					"item": [
+						{
+							"name": "curriculos",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTYwOTc3LCJpYXQiOjE3MzE1MDA5NzcsImp0aSI6ImQwYWQyMDc5OTA0NTRjMmU5MjAxN2VjYTExNTRlZGM2IiwidXNlcl9pZCI6Mn0.mNzjhJzfMIjHyEhVpB-9m1tDVdXNzHBbLwlXz1yVzu8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/curriculos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"curriculos",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTI4NzE1LCJpYXQiOjE3MzA4OTI3MTUsImp0aSI6IjdlMzNmMzNlZDZjNzQ4YzQ4YWI0OTI4NTVkNWVjMGIyIiwidXNlcl9pZCI6Mn0.q7Rq92_4tylT5U8ctylEGTTMbz7ZXm2cOT_R5nXNzQQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "titulo_curriculo",
+											"value": "Mais um Curriculo do Boberson",
+											"type": "text"
+										},
+										{
+											"key": "arquivo",
+											"type": "file",
+											"src": "/D:/1 - Coding/Python_RoadMap.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/curriculos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"curriculos",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTI4NzE1LCJpYXQiOjE3MzA4OTI3MTUsImp0aSI6IjdlMzNmMzNlZDZjNzQ4YzQ4YWI0OTI4NTVkNWVjMGIyIiwidXNlcl9pZCI6Mn0.q7Rq92_4tylT5U8ctylEGTTMbz7ZXm2cOT_R5nXNzQQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/curriculos/10/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"curriculos",
+										"10",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTI4NzMyLCJpYXQiOjE3MzA4OTI3MzIsImp0aSI6IjE0NmUyYjA5Y2I0NTQwYzg4MmJiN2Q3NWI2NTQwYTk5IiwidXNlcl9pZCI6MTF9.vLe1MjnvG050ECKzqJOshS60iS10CAn7Q4jEQQuhndA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "titulo_curriculo",
+											"value": "Newton",
+											"type": "text"
+										},
+										{
+											"key": "arquivo",
+											"type": "file",
+											"src": "/D:/1 - Coding/Javascript_RoadMap.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/curriculos/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"curriculos",
+										"8",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwODUxNTM0LCJpYXQiOjE3MzA4MTU1MzQsImp0aSI6IjM5ODMwNWQxNjkwMTQwOWE4N2FmY2NkYmNjMzkwNTlmIiwidXNlcl9pZCI6Mn0.pGkPihvRf_UquwwVxvlqCYy0e6iwwD8BLkyE__hcXWg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "titulo_curriculo",
+											"value": "Curriculo do Bob é um RoadMap",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/curriculos/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"curriculos",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "composites",
+			"item": [
+				{
+					"name": "candidato-detalhes",
+					"item": [
+						{
+							"name": "dado_endereco_telefone",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNzY2MzE2LCJpYXQiOjE3MzI3MDYzMTYsImp0aSI6IjBmYjczNjc3ZDdmNTRkYWJhMzUwNDdjZDk4ZjE4NDYzIiwidXNlcl9pZCI6NH0.n-jI0prjEQ6hnjYmO_ixyoFHTP3lMHKUGgZPJKAGors",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato-detalhes/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato-detalhes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - One Tel",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNDQ5MzQ4LCJpYXQiOjE3MzIzODkzNDgsImp0aSI6IjU4MWM1YTMxYzE4MzQxYmE4ZTg1ZDUwYmVhNDdkNjZiIiwidXNlcl9pZCI6MzR9.nkuvEwmus9VgO_c2heBjNiw7mzN7eXdqj_xzKj31UKs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dados_candidato\": {\r\n        \"genero\": \"nao_respondido\",\r\n        \"deficiencia\": true,\r\n        \"tipo_deficiencia\": \"Surdo\",\r\n        \"linkedin\": \"http://www.linkedin.com/boberson\",\r\n        \"github\": \"http://www.github.com/borberson\"\r\n    },\r\n    \"enderecos\": {\r\n        \"cep\": \"50614568\",\r\n        \"logradouro\": \"Rua Tal tal e tal\",\r\n        \"bairro\": \"Bairro da Zueira\",\r\n        \"localidade\": \"Parnamirim\",\r\n        \"uf\": \"RN\",\r\n        \"estado\": \"Rio Grande do Norte\",\r\n        \"regiao\": \"Nordeste\",\r\n        \"numero\": \"1001\",\r\n        \"complemento\": \"Em frente a praça da Dona Cotinha\"\r\n    },\r\n    \"telefones\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato-detalhes/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato-detalhes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Many Tels",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNzY2MzE2LCJpYXQiOjE3MzI3MDYzMTYsImp0aSI6IjBmYjczNjc3ZDdmNTRkYWJhMzUwNDdjZDk4ZjE4NDYzIiwidXNlcl9pZCI6NH0.n-jI0prjEQ6hnjYmO_ixyoFHTP3lMHKUGgZPJKAGors",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dados_candidato\": {\r\n        \"genero\": \"nao_respondido\",\r\n        \"deficiencia\": true,\r\n        \"tipo_deficiencia\": \"Cego\",\r\n        \"linkedin\": \"http://www.linkedin.com/boberson\",\r\n        \"github\": \"http://www.github.com/borberson\"\r\n    },\r\n    \"enderecos\": {\r\n        \"cep\": \"50614568\",\r\n        \"logradouro\": \"Rua Tal tal e tal\",\r\n        \"bairro\": \"Bairro da Zueira\",\r\n        \"localidade\": \"Parnamirim\",\r\n        \"uf\": \"RN\",\r\n        \"estado\": \"Rio Grande do Norte\",\r\n        \"regiao\": \"Nordeste\",\r\n        \"numero\": \"1001\",\r\n        \"complemento\": \"Em frente a pracinha\"\r\n    },\r\n    \"telefones\": [\r\n        {\r\n            \"numero\": \"8912849849\",\r\n            \"tipo\": \"celular\"\r\n        },\r\n        {\r\n            \"numero\": \"89498329849\",\r\n            \"tipo\": \"residencial\"\r\n        },\r\n        {\r\n            \"numero\": \"89418849849\",\r\n            \"tipo\": \"comercial\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato-detalhes/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato-detalhes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxOTkyNTQ1LCJpYXQiOjE3MzE5MzI1NDUsImp0aSI6IjA5ZDQ0ZDZmNDNhNDQwZTQ5NWZhZjE0MTU5YzE0YjMxIiwidXNlcl9pZCI6MzR9.tW7LFKO_uVKgh4ZHFzdrBkFgHGDe8ZsFZkg0WFkfJEg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dados_candidato\": \r\n        {\r\n            \"id\": 15,\r\n            \"genero\": \"nao_respondido\",\r\n            \"deficiencia\": true,\r\n            \"tipo_deficiencia\": \"Aleijado das pernas\",\r\n            \"linkedin\": \"http://www.linkedin.com/boberson\",\r\n            \"github\": \"http://www.github.com/borberson\"\r\n        }\r\n    ,\r\n    \"endereco\": \r\n        {\r\n            \"id\": 11,\r\n            \"cep\": \"50614568\",\r\n            \"logradouro\": \"Rua Tal tal e tal\",\r\n            \"bairro\": \"Bairro da Zueira\",\r\n            \"localidade\": \"Parnamirim\",\r\n            \"uf\": \"RN\",\r\n            \"estado\": \"Rio Grande do Norte\",\r\n            \"regiao\": \"Nordeste\",\r\n            \"numero\": \"1001\",\r\n            \"complemento\": \"Em frente a academia da Dona Cotinha\"\r\n        }\r\n    ,\r\n    \"telefones\": [\r\n        {\r\n            \"id\": 22,\r\n            \"numero\": \"8912849849\",\r\n            \"tipo\": \"celular\"\r\n        },\r\n        {\r\n            \"id\": 25,\r\n            \"numero\": \"89498329849\",\r\n            \"tipo\": \"residencial\"\r\n        },\r\n        {\r\n            \"id\": 24,\r\n            \"numero\": \"89418849849\",\r\n            \"tipo\": \"comercial\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato-detalhes/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato-detalhes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxOTkyNTQ1LCJpYXQiOjE3MzE5MzI1NDUsImp0aSI6IjA5ZDQ0ZDZmNDNhNDQwZTQ5NWZhZjE0MTU5YzE0YjMxIiwidXNlcl9pZCI6MzR9.tW7LFKO_uVKgh4ZHFzdrBkFgHGDe8ZsFZkg0WFkfJEg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dados_candidato\": {\r\n        \"id\": 15,\r\n        \"linkedin\": \"http://www.linkedin.com/novo_perfil\"\r\n    },\r\n    \"endereco\": {\r\n        \"id\": 11,\r\n        \"logradouro\": \"Nova Rua Atualizada\",\r\n        \"numero\": \"1234\"\r\n    },\r\n    \"telefones\": [\r\n        {\r\n            \"id\": 22,\r\n            \"numero\": \"777777777\"\r\n        },\r\n        {\r\n            \"id\": 24,\r\n            \"tipo\": \"residencial\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato-detalhes/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato-detalhes",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "candidato-curriculo",
+					"item": [
+						{
+							"name": "GET",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMzMjA0MDQxLCJpYXQiOjE3MzMxNDQwNDEsImp0aSI6IjgyYjU2MGZjNTA3YjQ2ZWY4NWNlYjlhMjVkZTI5Y2FiIiwidXNlcl9pZCI6NX0.yiu-_6DWuP9RS3d9AlOOyP2RbfGxEhFliBfrNidvwvg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato-curriculo/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato-curriculo",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMzMjA0MDQxLCJpYXQiOjE3MzMxNDQwNDEsImp0aSI6IjgyYjU2MGZjNTA3YjQ2ZWY4NWNlYjlhMjVkZTI5Y2FiIiwidXNlcl9pZCI6NX0.yiu-_6DWuP9RS3d9AlOOyP2RbfGxEhFliBfrNidvwvg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "habilidades",
+											"value": "[{\"nome\": \"Banco de dados\"}, {\"nome\": \"Programação OOP\"}]",
+											"type": "text"
+										},
+										{
+											"key": "experiencias_academicas",
+											"value": "[{\"formacao\": \"Engenharia de tapauer\", \"curso\": \"Fechamento de tapauer\", \"status\": \"em_andamento\", \"instituicao\": \"Universidade dos Tapuers do Brasil\", \"inicio\": \"2022-12-14\"}, {\"formacao\": \"Curso técnico\", \"curso\": \"Curso de Python\", \"status\": \"Completo\", \"instituicao\": \"FAP\", \"inicio\": \"2024-06-15\", \"fim\": \"2024-12-02\"}]",
+											"type": "text"
+										},
+										{
+											"key": "experiencias_profissionais",
+											"value": "[{\"empresa\": \"Python S.A.\", \"cargo\": \"Ajudante do traineer do ajudante de pedreiro\", \"atual\": true, \"inicio\": \"2022-12-14\", \"descricao_atividades\": \"Muita programação Python!\"}, {\"empresa\": \"Baker\", \"cargo\": \"Eng. MWD\", \"atual\": false, \"inicio\": \"2015-02-06\", \"fim\": \"2020-12-12\", \"descricao_atividades\": \"Eng. de perfuração.\"}]",
+											"type": "text"
+										},
+										{
+											"key": "idiomas",
+											"value": "[{\"idioma\": \"Russo\", \"nivel\": \"avancado\"}, {\"idioma\": \"Mandarim\", \"nivel\": \"avancado\"}]",
+											"type": "text"
+										},
+										{
+											"key": "conquistas",
+											"value": "[{\"titulo\": \"Escalada Monte Everest\", \"descricao\": \"Escalei várias e várias vezes o monte everest;\\r\\n\\r\\nEquipamentos utilizados:\\r\\n- Camisa regata;\\r\\n- 3 cotonetes;\\r\\n- Bermuda Adidas;\"}, {\"titulo\": \"Corrida São Silvetre\", \"descricao\": \"Ganhei a corrida da São Silvestre 5 vezes, correndo de costas e descalço.\"}]",
+											"type": "text"
+										},
+										{
+											"key": "curriculo",
+											"value": "{\"titulo_curriculo\": \"Curriculo Python\"}",
+											"type": "text"
+										},
+										{
+											"key": "arquivo",
+											"type": "file",
+											"src": "/D:/1 - Coding/Python_RoadMap.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/candidato-curriculo/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"candidato-curriculo",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
