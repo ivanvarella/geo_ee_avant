@@ -31,6 +31,7 @@ O curso FAP possui uma carga horária de 200 horas e abrange as seguintes áreas
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Como Executar o Projeto (backend com Django)](#como-executar-o-projeto)
+- [Estrutura do Projeto - Repositório](#estrutura-do-projeto-repositório)
 - [Estrutura do Projeto - Backend](#estrutura-do-projeto-backend)
 - [Como executar o projeto - Backend](#como-executar-o-projeto)
 - [Executando com SQLite](#para-sqlite)
@@ -40,9 +41,10 @@ O curso FAP possui uma carga horária de 200 horas e abrange as seguintes áreas
 - [Dependências Backend](#dependências-backend)
 - [Estrutura do Repositório Backend](#estrutura-do-repositório-backend)
 - [Diagrama ERD](#diagrama-erd)
-- [Como Executar o Projeto (Frontend com React - Vite)](#front-end-com-react)
-- [Estrutura do Repositório Frontend](#estrutura-do-projeto-frontend)
+- [Como Executar o Projeto (Frontend com React - Vite)](#como-executar-o-projeto-frontend)
+- [Estrutura do Repositório Frontend](#front-end-com-react)
 - [Dependências Dependências Frontend](#dependências-frontend)
+- [Telas de exemplo do projeto](#telas-de-exemplo-do-projeto)
 
 ## Funcionalidades
 
@@ -93,7 +95,7 @@ O curso FAP possui uma carga horária de 200 horas e abrange as seguintes áreas
 
 ## Como Executar o Projeto
 
-1. **Clone o Repositório (Back-end)**  
+1. **Clone o Repositório (Backand + Frontend)**
    HTTPS:
 
    ```bash
@@ -109,6 +111,16 @@ O curso FAP possui uma carga horária de 200 horas e abrange as seguintes áreas
    ```
 
    ## Após o repositório ser clonado, você encontrará esta estrutura de arquivos:
+
+   ## Estrutura do Projeto Repositório
+
+   ```text
+     .
+     geo_ee_avant/
+     ├── backend/    # Contém o repositório backend
+     ├── frontend/   # Contém o repositório frontend
+     └── README.md   # Readme do projeto
+   ```
 
    ## Estrutura do Projeto Backend
 
@@ -133,6 +145,10 @@ O curso FAP possui uma carga horária de 200 horas e abrange as seguintes áreas
    ```
 
 2. **Navegue até a pasta raiz do projeto Django**
+
+   ```bash
+   cd geo_ee_avant/backend
+   ```
 
 3. **Crie e ative um Ambiente Virtual e o ative**
 
@@ -412,48 +428,29 @@ python3 manage.py runserver
 
 # Front-end com React
 
-## Após clonar o repositório, siga estas etapas para configurar e executar o projeto React com Vite:
+## 1. **Estrutura do Projeto Frontend**
 
-1. **Clone o Repositório (Front-end)**  
-   HTTPS:
-
-   ```bash
-   git clone https://gitlab.com/fap_pi/geo_ee_front.git
-   ```
-
-   OU
-
-   SSH:
-
-   ```bash
-   git clone git@gitlab.com:fap_pi/geo_ee_front.git
-   ```
-
-   ## Após o repositório ser clonado, você encontrará esta estrutura de arquivos:
-
-   ## Estrutura do Projeto Frontend
-
-   ```text
-    .
-    ├── README.md
-    ├── documentation
-    └── src
-        ├── components
-        │   ├── Button
-        │   ├── Footer
-        │   ├── Forms
-        │   ├── Header
-        │   ├── ProtectedRoute
-        │   ├── Telefone
-        │   └── UploadCurriculo
-        ├── layouts
-        ├── pages
-        │   ├── Candidato
-        │   ├── EmailVerification
-        │   ├── PasswordReset
-        │   └── temp
-        └── services
-   ```
+```text
+.
+├── README.md
+├── documentation
+└── src
+    ├── components
+    │   ├── Button
+    │   ├── Footer
+    │   ├── Forms
+    │   ├── Header
+    │   ├── ProtectedRoute
+    │   ├── Telefone
+    │   └── UploadCurriculo
+    ├── layouts
+    ├── pages
+    │   ├── Candidato
+    │   ├── EmailVerification
+    │   ├── PasswordReset
+    │   └── temp
+    └── services
+```
 
 ## Dependências Frontend
 
@@ -470,13 +467,15 @@ python3 manage.py runserver
 - `react-router-dom==6.27.0`: Biblioteca para gerenciar navegação e roteamento em aplicações React.
 - `validator==13.12.0`: Biblioteca para validação de dados no frontend (como e-mails, números, etc.).
 
+## Como executar o projeto frontend
+
 2. **Navegue até o diretório raiz do projeto Frontend**
 
    Abra o terminal e mude para o diretório do projeto frontend:
    #Alterar
 
    ```bash
-   cd front/geo-ee
+   cd geo_ee_avant/frontend
    ```
 
 3. **Instale as Dependências**
@@ -497,7 +496,7 @@ python3 manage.py runserver
 
 5. **Abra no Navegador**
 
-   Assim que o servidor de desenvolvimento estiver em execução, abra o navegador e acesse http://localhost:5175. Altere a porta caso não seja a mesma, você pode verificar o endereço e a porta no seu terminal após a execução do servidor. Desta forma, você deverá ver sua aplicação React rodando.
+   Assim que o servidor de desenvolvimento estiver em execução, abra o navegador e acesse http://localhost:5175. Neste projeto foi configurado para que a porta utilizada seja a '5157', pois o backend espera essa porta para realizar o envio de emails e outros, mas caso esta porta esteja ocupada no momento da execução do servidor frontend, outra porta será utilizada automaticamente. Altere a porta caso não seja a mesma, você pode verificar o endereço e a porta no seu terminal após a execução do servidor. Desta forma, você deverá ver sua aplicação React rodando.
 
 6. **Modifique e Teste**
 
@@ -518,3 +517,56 @@ python3 manage.py runserver
 - Projeto de Frontend: Este projeto é focado no backend com o uso do Django DRF RESTFul, o frontend desenvolvido em React é uma aplicação que complementa a aplicação geral, onde consome a API do projeto Django. Certifique-se de que há dados disponíveis no banco de dados e que o servidor Django está em execução.
 - Node.js e npm: Garanta que você possui as versões mais recentes do Node.js e npm instaladas na sua máquina para evitar problemas de compatibilidade.
 - Tratamento de Erros: Caso encontre erros durante a instalação ou ao executar o servidor de desenvolvimento, verifique o console para mensagens de erro, pois elas frequentemente oferecem orientações para resolver os problemas.
+
+## Telas de exemplo do projeto
+
+<table align="center">
+  <tr>
+    <td>
+      <a href="documentation/imgs/img1.jpg" target="_blank">
+        <img src="documentation/imgs/img1.jpg" alt="Imagem 1" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="documentation/imgs/img2.jpg" target="_blank">
+        <img src="documentation/imgs/img2.jpg" alt="Imagem 2" width="200"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="documentation/imgs/img3.jpg" target="_blank">
+        <img src="documentation/imgs/img3.jpg" alt="Imagem 3" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="documentation/imgs/img4.jpg" target="_blank">
+        <img src="documentation/imgs/img4.jpg" alt="Imagem 4" width="200"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="documentation/imgs/img5.jpg" target="_blank">
+        <img src="documentation/imgs/img5.jpg" alt="Imagem 3" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="documentation/imgs/img6.jpg" target="_blank">
+        <img src="documentation/imgs/img6.jpg" alt="Imagem 4" width="200"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="documentation/imgs/img7.jpg" target="_blank">
+        <img src="documentation/imgs/img7.jpg" alt="Imagem 3" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="documentation/imgs/img8.jpg" target="_blank">
+        <img src="documentation/imgs/img8.jpg" alt="Imagem 4" width="200"/>
+      </a>
+    </td>
+  </tr>
+</table>
