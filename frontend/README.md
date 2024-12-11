@@ -99,7 +99,7 @@ O curso FAP possui uma carga horária de 200 horas e abrange as seguintes áreas
    HTTPS:
 
    ```bash
-   git clone https://gitlab.com/fap_pi/geo_ee.git
+   git clone https://github.com/ivanvarella/geo_ee_avant.git
    ```
 
    OU
@@ -107,7 +107,7 @@ O curso FAP possui uma carga horária de 200 horas e abrange as seguintes áreas
    SSH:
 
    ```bash
-   git clone git@gitlab.com:fap_pi/geo_ee.git
+   git clone git@github.com:ivanvarella/geo_ee_avant.git
    ```
 
    ## Após o repositório ser clonado, você encontrará esta estrutura de arquivos:
